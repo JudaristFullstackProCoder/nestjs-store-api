@@ -1,6 +1,5 @@
 import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { Document } from 'mongoose';
-import { Option } from 'src/options/entities/option.entity';
 
 export type CategoryDocument = Category & Document<string>;
 
@@ -10,7 +9,7 @@ export type CategoryApiFilter = {
 
 @Schema()
 export class Category {
-  @Prop({ required: true, unique: true })
+  @Prop({ required: true, unique: true, type: mongoose.Schema.Types.String })
   readonly name: string;
 }
 

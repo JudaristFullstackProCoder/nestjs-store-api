@@ -26,7 +26,7 @@ import {
 @Injectable({ scope: Scope.DEFAULT })
 export class ChildCategoryRepository {
   constructor(
-    @InjectModel('childcategory')
+    @InjectModel('childcategories')
     readonly ChildCategoryModel: Model<ChildCategoryDocument>,
   ) {}
   async addChildCategory(

@@ -8,7 +8,7 @@ import { ChildCategoryRepository } from './childcategories.repository';
 @Module({
   imports: [
     MongooseModule.forFeature([
-      { name: 'childcategory', schema: ChildCategorySchema },
+      { name: 'childcategories', schema: ChildCategorySchema },
     ]),
   ],
   controllers: [ChildcategoriesController],

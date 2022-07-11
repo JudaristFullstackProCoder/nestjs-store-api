@@ -28,7 +28,7 @@ export class CategoryRepository {
     try {
       return mapToCategoryEntity(await new this.categoryModel(category).save());
     } catch (e) {
-      return new BadRequestException();
+      return new BadRequestException(e);
     }
   }
   async deleteCategory(id: string) {
@@ -37,7 +37,7 @@ export class CategoryRepository {
         ? SuccessApiResponse(DELETE_ENTITY, 'category')
         : new UnprocessableEntityException();
     } catch (e) {
-      return new BadRequestException();
+      return new BadRequestException(e);
     }
   }
   async updateCategory(id: string, category: unknown) {
@@ -46,7 +46,7 @@ export class CategoryRepository {
         ? SuccessApiResponse(UPDATE_ENTITY, 'category')
         : new NotFoundException();
     } catch (e) {
-      return new BadRequestException();
+      return new BadRequestException(e);
     }
   }
   async getCategory(
@@ -55,16 +55,20 @@ export class CategoryRepository {
     try {
       return (await this.categoryModel.findById(id)) ?? new NotFoundException();
     } catch (e) {
-      return new BadRequestException();
+      return new BadRequestException(e);
     }
   }
   async getAllCategories(): Promise<
     Category[] | InternalServerErrorException | NotFoundException
   > {
     try {
-      return (await this.categoryModel.find({})) ?? new NotFoundException();
+      return (
+        (await this.categoryModel.find({})).map((e) =>
+          mapToCategoryEntity(e),
+        ) ?? new NotFoundException()
+      );
     } catch (e) {
-      return new InternalServerErrorException();
+      return new InternalServerErrorException(e);
     }
   }
 }

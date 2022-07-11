@@ -6,7 +6,7 @@ import { Option } from 'src/options/entities/option.entity';
 export type ChildCategoryDocument = ChildCategory & Document<string>;
 
 export class ChildCategory {
-  @Prop({ type: mongoose.Schema.Types.String, required: true })
+  @Prop({ type: mongoose.Schema.Types.String, required: true, unique: true })
   readonly name: string;
   @Prop({
     type: mongoose.Schema.Types.ObjectId,

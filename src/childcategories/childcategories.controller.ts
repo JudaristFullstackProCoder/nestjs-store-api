@@ -43,7 +43,6 @@ export class ChildcategoriesController {
     status: 201,
     description: 'a category was successfully created',
     type: ChildCategoryEntityMapClass,
-    isArray: true,
   })
   @ApiBadRequestResponse({
     status: 400,
@@ -94,7 +93,6 @@ export class ChildcategoriesController {
     status: 200,
     description: 'when we found a categor(y)',
     type: ChildCategoryEntityMapClass,
-    isArray: true,
   })
   @ApiInternalServerErrorResponse({
     description:

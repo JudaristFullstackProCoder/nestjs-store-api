@@ -1,25 +1,26 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UsersModule } from './users/users.module';
 import { MongooseModule } from '@nestjs/mongoose';
-import { ProductsModule } from './products/products.module';
-import { VariationsModule } from './variations/variations.module';
-import { ChildcategoriesModule } from './childcategories/childcategories.module';
-import { CategoriesModule } from './categories/categories.module';
-import { OptionsModule } from './options/options.module';
-import { StoresModule } from './stores/stores.module';
-import { CartsModule } from './carts/carts.module';
 import * as autopup from 'mongoose-autopopulate';
 import * as mp from 'mongoose-paginate-v2';
 import { MulterModule } from '@nestjs/platform-express';
-import { PromocodesModule } from './promocodes/promocodes.module';
-import { StoresettingsModule } from './storesettings/storesettings.module';
+import { UsersModule } from './users/users.module';
 import { AdminsModule } from './admins/admins.module';
+import { OptionsModule } from './options/options.module';
+import { ProductsModule } from './products/products.module';
+import { StoresModule } from './stores/stores.module';
+import { CartsModule } from './carts/carts.module';
+import { VariationsModule } from './variations/variations.module';
+import { PromocodesModule } from './promocodes/promocodes.module';
+import { FamiliesModule } from './families/families.module';
+import { CategoriesModule } from './categories/categories.module';
+import { LikesModule } from './likes/likes.module';
+import { ViewsModule } from './views/views.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
-    UsersModule,
     MongooseModule.forRoot('mongodb://localhost:27017/nest-store-api', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -33,16 +34,19 @@ import { AdminsModule } from './admins/admins.module';
     MulterModule.register({
       dest: './uploads',
     }),
+    UsersModule,
+    AdminsModule,
+    OptionsModule,
     ProductsModule,
     StoresModule,
-    OptionsModule,
-    CategoriesModule,
-    ChildcategoriesModule,
-    VariationsModule,
     CartsModule,
+    VariationsModule,
     PromocodesModule,
-    StoresettingsModule,
-    AdminsModule,
+    FamiliesModule,
+    CategoriesModule,
+    LikesModule,
+    ViewsModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

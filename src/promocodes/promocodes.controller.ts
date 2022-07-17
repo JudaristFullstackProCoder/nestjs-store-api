@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { PromocodesService } from './promocodes.service';
 import { CreatePromocodeDto } from './dto/create-promocode.dto';
 import { UpdatePromocodeDto } from './dto/update-promocode.dto';
@@ -23,7 +31,10 @@ export class PromocodesController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updatePromocodeDto: UpdatePromocodeDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updatePromocodeDto: UpdatePromocodeDto,
+  ) {
     return this.promocodesService.update(+id, updatePromocodeDto);
   }
 

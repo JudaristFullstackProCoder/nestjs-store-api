@@ -4,6 +4,6 @@ import { ViewsController } from './views.controller';
 
 @Module({
   controllers: [ViewsController],
-  providers: [ViewsService]
+  providers: [ViewsService],
 })
 export class ViewsModule {}

@@ -4,6 +4,6 @@ import { VariationsController } from './variations.controller';
 
 @Module({
   controllers: [VariationsController],
-  providers: [VariationsService]
+  providers: [VariationsService],
 })
 export class VariationsModule {}

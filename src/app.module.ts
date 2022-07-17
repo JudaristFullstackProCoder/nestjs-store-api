@@ -19,6 +19,7 @@ import { LikesModule } from './likes/likes.module';
 import { ViewsModule } from './views/views.module';
 import { AuthModule } from './auth/auth.module';
 import { MailerModule } from './mailer/mailer.module';
+import { SubscriptionsModule } from './subscriptions/subscriptions.module';
 
 @Module({
   imports: [
@@ -49,6 +50,7 @@ import { MailerModule } from './mailer/mailer.module';
     ViewsModule,
     AuthModule,
     MailerModule,
+    SubscriptionsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

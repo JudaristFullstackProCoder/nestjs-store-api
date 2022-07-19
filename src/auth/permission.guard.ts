@@ -15,13 +15,13 @@ export class PermissionsGuard implements CanActivate {
     }
     const request = context.switchToHttp().getRequest();
     const userperms: string[] = Object.values(
-      request?.session?.user?.permissions,
+      request?.session?.user?.permissions[0],
     );
-    permissions.forEach((perms: string) => {
-      if (userperms.includes(perms)) {
+    for (let i = 0; i < userperms.length; i++) {
+      if (userperms[i] === permissions[0]) {
         return true;
       }
-    });
+    }
     return false;
   }
 }

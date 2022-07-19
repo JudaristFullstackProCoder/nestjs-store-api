@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="dwhSl6WmG2Lgtm_XthCT" name="tech stack">
-        <mxGraphModel dx="1054" dy="620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1600" math="0" shadow="0">
+        <mxGraphModel dx="740" dy="620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1600" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -62,7 +62,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="TMZfqNiksRSLHxYCaZOC" name="entities">
-        <mxGraphModel dx="1054" dy="620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+        <mxGraphModel dx="740" dy="620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
             <root>
                 <mxCell id="w7pke28NNPh62oyHdyz7-0"/>
                 <mxCell id="w7pke28NNPh62oyHdyz7-1" parent="w7pke28NNPh62oyHdyz7-0"/>

@@ -20,7 +20,7 @@ import { ViewsModule } from './views/views.module';
 import { AuthModule } from './auth/auth.module';
 import { MailerModule } from './mailer/mailer.module';
 import { SubscriptionsModule } from './subscriptions/subscriptions.module';
-import { SessionService } from './session/session.service';
+import { SessionService } from './services/session/session.service';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 
 @Module({

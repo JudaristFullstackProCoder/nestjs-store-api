@@ -36,7 +36,7 @@ export class User {
     default: USER_DEFAULTS_PERMISSIONS,
     type: mongoose.Schema.Types.Array,
   })
-  permissions: string[];
+  permissions: Record<string, unknown>[];
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

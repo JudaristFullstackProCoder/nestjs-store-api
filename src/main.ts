@@ -15,10 +15,10 @@ async function bootstrap() {
     }),
   );
   app.use(helmet());
-  app.useGlobalPipes(new ValidationPipe({ transform: true }));
+  app.useGlobalPipes(new ValidationPipe());
   const config = new DocumentBuilder()
     .setTitle('Nest store api')
-    .setDescription('This is an api for a nest store')
+    .setDescription('This is a marketplace api')
     .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, config);

@@ -20,6 +20,8 @@ import { ViewsModule } from './views/views.module';
 import { AuthModule } from './auth/auth.module';
 import { MailerModule } from './mailer/mailer.module';
 import { SubscriptionsModule } from './subscriptions/subscriptions.module';
+import { SessionService } from './session/session.service';
+import { EventEmitterModule } from '@nestjs/event-emitter';
 
 @Module({
   imports: [
@@ -36,6 +38,7 @@ import { SubscriptionsModule } from './subscriptions/subscriptions.module';
     MulterModule.register({
       dest: './uploads',
     }),
+    EventEmitterModule.forRoot(),
     UsersModule,
     AdminsModule,
     OptionsModule,
@@ -53,6 +56,6 @@ import { SubscriptionsModule } from './subscriptions/subscriptions.module';
     SubscriptionsModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, SessionService],
 })
 export class AppModule {}

@@ -10,7 +10,9 @@ import {
 import { ViewsService } from './views.service';
 import { CreateViewDto } from './dto/create-view.dto';
 import { UpdateViewDto } from './dto/update-view.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags("Product's views")
 @Controller('views')
 export class ViewsController {
   constructor(private readonly viewsService: ViewsService) {}

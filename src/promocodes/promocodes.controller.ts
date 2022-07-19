@@ -10,7 +10,9 @@ import {
 import { PromocodesService } from './promocodes.service';
 import { CreatePromocodeDto } from './dto/create-promocode.dto';
 import { UpdatePromocodeDto } from './dto/update-promocode.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Products Promotion codes')
 @Controller('promocodes')
 export class PromocodesController {
   constructor(private readonly promocodesService: PromocodesService) {}

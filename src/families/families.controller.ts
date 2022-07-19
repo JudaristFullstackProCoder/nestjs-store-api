@@ -10,7 +10,9 @@ import {
 import { FamiliesService } from './families.service';
 import { CreateFamilyDto } from './dto/create-family.dto';
 import { UpdateFamilyDto } from './dto/update-family.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Products Families')
 @Controller('families')
 export class FamiliesController {
   constructor(private readonly familiesService: FamiliesService) {}

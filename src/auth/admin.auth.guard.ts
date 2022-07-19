@@ -2,12 +2,15 @@ import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 
 @Injectable()
-export class UserAuthenticationGuard implements CanActivate {
+export class AdminAuthenticationGuard implements CanActivate {
   constructor(private reflector: Reflector) {}
 
   canActivate(context: ExecutionContext): boolean {
     const request = context.switchToHttp().getRequest();
-    const user = request?.session?.admin;
-    return user ? true : false;
+    const admin = request?.session?.admin;
+    if (!!admin) {
+      return true;
+    }
+    return false;
   }
 }

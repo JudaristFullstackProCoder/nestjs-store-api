@@ -7,7 +7,11 @@ export class UserAuthenticationGuard implements CanActivate {
 
   canActivate(context: ExecutionContext): boolean {
     const request = context.switchToHttp().getRequest();
+    const admin = request?.session?.admin;
     const user = request?.session?.user;
+    if (!!user || !!admin) {
+      return true;
+    }
     return user ? true : false;
   }
 }

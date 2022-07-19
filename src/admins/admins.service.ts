@@ -1,26 +1,32 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
+import { AdminRepository } from './admin.repository';
 import { CreateAdminDto } from './dto/create-admin.dto';
 import { UpdateAdminDto } from './dto/update-admin.dto';
 
 @Injectable()
 export class AdminsService {
-  create(createAdminDto: CreateAdminDto) {
-    return 'This action adds a new admin';
+  constructor(@Inject(AdminRepository) private repository: AdminRepository) {}
+  create(user: CreateAdminDto) {
+    return this.repository.addAdmin(user);
   }
 
   findAll() {
-    return `This action returns all admins`;
+    return this.repository.getAllAdmins();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} admin`;
+  findOne(id: string) {
+    return this.repository.getAdminItem(id);
   }
 
-  update(id: number, updateAdminDto: UpdateAdminDto) {
-    return `This action updates a #${id} admin`;
+  update(id: string, updateUserDto: UpdateAdminDto) {
+    return this.repository.updateAdmin(id, updateUserDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} admin`;
+  remove(id: string) {
+    return this.repository.deleteAdmin(id);
+  }
+
+  getOneUserItem(filters: Record<string, unknown>) {
+    return this.repository.getAdminItemByFilters(filters);
   }
 }
